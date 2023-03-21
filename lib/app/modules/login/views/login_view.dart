@@ -11,7 +11,7 @@ class LoginView extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text(controller.target),
       ),
       body: Padding(
         padding: EdgeInsets.all(16),
@@ -33,9 +33,19 @@ class LoginView extends GetView<LoginController> {
               ),
             ),
             SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: controller.login,
-              child: Text('Login'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton(
+                  onPressed: controller.login,
+                  child: Text('Login'),
+                ),
+                SizedBox(width: 10,),
+                ElevatedButton(
+                  onPressed: controller.login,
+                  child: Text('Register'),
+                ),
+              ],
             ),
           ],
         ),

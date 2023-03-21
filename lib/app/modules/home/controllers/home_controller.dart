@@ -1,3 +1,5 @@
+import 'package:dictionary/app/routes/app_pages.dart';
+import 'package:dictionary/constants.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
@@ -17,6 +19,10 @@ class HomeController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+  }
+
+  void toKrLogin(){
+    Get.toNamed(Routes.LOGIN,arguments: Constants.kr);
   }
 
   void increment() => count.value++;
